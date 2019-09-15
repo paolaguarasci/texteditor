@@ -1,4 +1,4 @@
-package sample;
+package it.paola.texteditor;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
