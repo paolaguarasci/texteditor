@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="newMenuItem" mnemonicParsing="false" onAction="#handleNew" text="Nuovo" />
+                        <MenuItem fx:id="saveMenuItem" onAction="#handleSave" text="_Salva" />
+                        <MenuItem fx:id="openMenuItem" mnemonicParsing="false" onAction="#handleOpen" text="Apri" />
+                        <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#handleClose" text="Esci" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Aiuto">
+               <items>
+                  <MenuItem fx:id="aboutMenu" mnemonicParsing="false" onAction="#handleAbout" text="About" />
+               </items></Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="SELECTED_TAB" visible="false" BorderPane.alignment="CENTER">
+        <tabs>
+
+        </tabs>
+      </TabPane>
+   </center>
+
+</BorderPane>
