@@ -15,7 +15,7 @@ public class Main extends Application {
         primaryStage.setTitle("Editor");
         Controller ctrl = loader.getController();
         ctrl.init(primaryStage);
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
 
