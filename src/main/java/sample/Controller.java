@@ -34,12 +34,10 @@ public class Controller {
   private Stage stage;
   
   private HashMap<Tab, File> tab2file;
-  private HashMap<Tab,Boolean> tabIsMod;
   
   public void init(Stage stage) {
     this.stage = stage;
     tab2file = new HashMap<Tab, File>();
-    tabIsMod = new HashMap<Tab, Boolean>();
   }
   public  void handleNew(){
     tabPane.setVisible(true);
@@ -48,23 +46,16 @@ public class Controller {
   
   private  Tab makeNewTab() {
     tabPane.setVisible(true);
-    
     Tab nuova = new Tab("Senza Nome ");
     TextArea areaDiTesto = new TextArea();
     nuova.setContent(areaDiTesto);
     nuova.setClosable(true);
-    tabIsMod.put(nuova, false);
     areaDiTesto.textProperty().addListener(new ChangeListener<String>() {
       @Override
       public void changed(ObservableValue<? extends String> observable,
                           String oldValue, String newValue) {
-//        tabIsMod.replace(nuova, true);
-        boolean isMod = tabIsMod.get(nuova);
-        if (!isMod){
-          System.out.println("modifica IF");
-          tabIsMod.replace(nuova, true);
-          nuova.setText(nuova.getText() + "*");
-        }
+        nuova.setText(nuova.getText() + "*");
+
       }
     });
     return nuova;
@@ -91,8 +82,6 @@ public class Controller {
       tab2file.put(selectTab, file);
     }
     System.out.println("Tab aperte: " + tab2file.size());
-    tabIsMod.replace(selectTab, false);
-    selectTab.setText(selectTab.getText().replace("*",""));
     save(testo, file);
   }
   
@@ -115,7 +104,7 @@ public class Controller {
     selectTab.setText(file.getName());
     testo.setText(open(file));
     tabPane.getTabs().add(selectTab);
-    tabIsMod.put(selectTab, true);
+    
   }
   
   private  String open(File fileDaAprire){
