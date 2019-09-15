@@ -1,0 +1,1 @@
+[![Build Status](https://travis-ci.com/paolaguarasci/texteditor.svg?branch=master)](https://travis-ci.com/paolaguarasci/texteditor)
