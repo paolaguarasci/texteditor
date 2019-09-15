@@ -62,7 +62,7 @@ public class Controller {
   }
   
   public  void handleClose(){
-    System.exit(0);
+   stage.close();
   }
   
   public  void handleSave() {
@@ -78,9 +78,10 @@ public class Controller {
     if (file == null) {
       file = viewFileChooser(true);
       selectTab.setText(file.getName());
+      tab2file.remove(selectTab);
       tab2file.put(selectTab, file);
     }
-    
+    System.out.println("Tab aperte: " + tab2file.size());
     save(testo, file);
   }
   
@@ -103,6 +104,7 @@ public class Controller {
     selectTab.setText(file.getName());
     testo.setText(open(file));
     tabPane.getTabs().add(selectTab);
+    
   }
   
   private  String open(File fileDaAprire){
@@ -142,4 +144,5 @@ public class Controller {
   public  void handleChange() {
   
   }
+  
 }
