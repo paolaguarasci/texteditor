@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="newMenuItem" onAction="#handleNew" text="_Nuovo">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                        <MenuItem fx:id="saveMenuItem" mnemonicParsing="true" onAction="#handleSave" text="_Salva">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="S" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                        <MenuItem fx:id="openMenuItem" onAction="#handleOpen" text="_Apri">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                        <MenuItem fx:id="closeMenuItem" mnemonicParsing="false" onAction="#handleClose" text="Esci">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="W" control="UP" meta="DOWN" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Aiuto">
+               <items>
+                  <MenuItem fx:id="aboutMenuItem" mnemonicParsing="false" onAction="#handleAbout" text="About" />
+               </items></Menu>
+            </menus>
+        </MenuBar>
+    </top>
+    <center>
+      <TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="SELECTED_TAB" visible="false" BorderPane.alignment="CENTER">
+        <tabs>
+
+        </tabs>
+      </TabPane>
+   </center>
+
+</BorderPane>

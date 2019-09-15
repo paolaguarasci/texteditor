@@ -97,13 +97,9 @@ public class Controller {
   
   public  void handleOpen(){
     Tab selectTab = makeNewTab();
-    
     TextArea testo = ((TextArea) selectTab.getContent());
-    
     File file = viewFileChooser(false);
-    
     tab2file.put(selectTab, file);
-    
     selectTab.setText(file.getName());
     testo.setText(open(file));
     tabPane.getTabs().add(selectTab);
@@ -136,7 +132,6 @@ public class Controller {
     return tmp;
   }
   public  void handleAbout() {
-    // about forse aprirà una nuova finestra... ora devo vedere...
     Alert about = new Alert(Alert.AlertType.INFORMATION);
     about.setHeaderText(null);
     about.setTitle("About");
